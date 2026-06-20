@@ -4,12 +4,17 @@ public class PlayerMovement : MonoBehaviour
 {
     public SpinningSystem spinningSystem;
 
+    [HideInInspector]
+    public bool isBeingPushed;
+
     Rigidbody2D rb;
     public float speed;
+    public float maxSpeed;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        maxSpeed = speed;
     }
 
     private void FixedUpdate()
@@ -17,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
         if(spinningSystem != null)
         {
             if(spinningSystem.wheelDirection == WheelDirection.right)
-            {
+            {            
                 rb.AddForce(Vector2.right * speed);         
             }
             else if(spinningSystem.wheelDirection == WheelDirection.left)
@@ -26,11 +31,12 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-                rb.linearVelocityX = Mathf.Lerp(rb.linearVelocity.x, 0, 5f * Time.deltaTime);
+                if(!isBeingPushed)
+                    rb.linearVelocityX = Mathf.Lerp(rb.linearVelocity.x, 0, 5f * Time.deltaTime);
             }
 
-            if (rb.linearVelocityX > speed)
-                rb.linearVelocityX = speed;
+            if (rb.linearVelocityX > maxSpeed)
+                rb.linearVelocityX = maxSpeed;
         }
     }
 }
