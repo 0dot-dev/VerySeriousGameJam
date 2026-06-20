@@ -18,13 +18,19 @@ public class PlayerMovement : MonoBehaviour
         {
             if(spinningSystem.wheelDirection == WheelDirection.right)
             {
-                rb.linearVelocity = transform.right * speed;
-                Debug.Log(rb.linearVelocity);
+                rb.AddForce(Vector2.right * speed);         
             }
             else if(spinningSystem.wheelDirection == WheelDirection.left)
-                rb.linearVelocity = -transform.right * speed;
+            {
+                rb.AddForce(-Vector2.right * speed);
+            }
             else
-                rb.linearVelocity = Vector3.zero;
+            {
+                rb.linearVelocityX = Mathf.Lerp(rb.linearVelocity.x, 0, 5f * Time.deltaTime);
+            }
+
+            if (rb.linearVelocityX > speed)
+                rb.linearVelocityX = speed;
         }
     }
 }
