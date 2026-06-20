@@ -181,7 +181,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   spinningSystem: {fileID: 0}
+  isBeingPushed: 0
   speed: 7
+  maxSpeed: 0
 --- !u!114 &4199238632693763343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,6 +200,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   jumpForce: 10
+  airFlowLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  airForce: 10
+  deadlyLayer:
+    serializedVersion: 2
+    m_Bits: 512
   destinyLayer:
     serializedVersion: 2
     m_Bits: 128

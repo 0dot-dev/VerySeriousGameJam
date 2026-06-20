@@ -8,9 +8,14 @@ public class WorldInteraction : MonoBehaviour
     Rigidbody2D rb;
     public float jumpForce;
 
+    //AirFlow
     [Header("AirFlow")]
     public LayerMask airFlowLayer;
     public float airForce;
+
+    //Deadly
+    [Header("Deadly")]
+    public LayerMask deadlyLayer;
 
     //NextLevel
     [Header("Destiny")]
@@ -32,6 +37,10 @@ public class WorldInteraction : MonoBehaviour
         else if (colliderMask == destinyLayer)
         {
             LevelManager.Instance.NextLevel();
+        }
+        else if(colliderMask == deadlyLayer)
+        {
+            LevelManager.Instance.RestartLevel();
         }
 
     }
