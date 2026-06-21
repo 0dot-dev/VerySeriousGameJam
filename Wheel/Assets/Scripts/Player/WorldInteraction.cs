@@ -18,7 +18,7 @@ public class WorldInteraction : MonoBehaviour
     public LayerMask deadlyLayer;
 
     //Spawnpoint
-    [Header("Spawnpoint")]
+    [Header("Checkpoint")]
     public LayerMask checkPointLayer;
 
     //NextLevel
