@@ -5,12 +5,18 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
 
+    public GameObject player;
+    Rigidbody2D rb;
+    public Transform spawnPoint;
+
     private void Awake()
     {
         if (Instance == null)
             Instance = this;
         else
             Destroy(gameObject);
+
+        rb = player.GetComponent<Rigidbody2D>();
     }
 
     public void NextLevel()
@@ -20,6 +26,7 @@ public class LevelManager : MonoBehaviour
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        rb.linearVelocity = Vector3.zero;
+        player.transform.position = spawnPoint.position;
     }
 }

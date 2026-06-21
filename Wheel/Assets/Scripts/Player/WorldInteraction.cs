@@ -17,6 +17,10 @@ public class WorldInteraction : MonoBehaviour
     [Header("Deadly")]
     public LayerMask deadlyLayer;
 
+    //Spawnpoint
+    [Header("Spawnpoint")]
+    public LayerMask checkPointLayer;
+
     //NextLevel
     [Header("Destiny")]
     public LayerMask destinyLayer;
@@ -41,6 +45,10 @@ public class WorldInteraction : MonoBehaviour
         else if(colliderMask == deadlyLayer)
         {
             LevelManager.Instance.RestartLevel();
+        }
+        else if(colliderMask == checkPointLayer)
+        {
+            LevelManager.Instance.spawnPoint = collision.gameObject.transform;
         }
 
     }
