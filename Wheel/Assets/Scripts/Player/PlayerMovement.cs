@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float maxSpeed;
 
+    public SpriteRenderer texture;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -23,10 +25,12 @@ public class PlayerMovement : MonoBehaviour
         {
             if(spinningSystem.wheelDirection == WheelDirection.right)
             {            
+                texture.flipX = true;
                 rb.AddForce(Vector2.right * speed);         
             }
             else if(spinningSystem.wheelDirection == WheelDirection.left)
             {
+                texture.flipX = false;
                 rb.AddForce(-Vector2.right * speed);
             }
             else

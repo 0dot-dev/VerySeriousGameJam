@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WaterMat
+  m_Shader: {fileID: -6465566751694194690, guid: 79fabdc1426ade240926b4221488f77c, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _SampleTexture2D_2a5a964703f14bc5b5b1c04b0a430631_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: a8b06c91c50f28c40b2c349d362bd758, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_3864d7b6b75e4f378b0ec9aa79fd470a_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: a8b06c91c50f28c40b2c349d362bd758, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_98f517f4eae44bf9ad46445cc628772f_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: a8b06c91c50f28c40b2c349d362bd758, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_a58803b17d32487d81a13b005284f2e7_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: a8b06c91c50f28c40b2c349d362bd758, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _MovingVelocity: 3
+    - _NumbOfPixels: 15
+    - _RiplesQuantity: 4
+    - _WaterTexSize: 3
+    m_Colors:
+    - White: {r: 1, g: 1, b: 1, a: 1}
+    - _BorderTickness: {r: 0, g: 0.07, b: 0, a: 0}
+    - _RiplesColor: {r: 0.6431373, g: 0.8666667, b: 0.8588235, a: 1}
+    - _WaterColor: {r: 0.30980387, g: 0.5607843, b: 0.7294118, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
+--- !u!114 &8277545476711857289
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.Rendering.Universal.AssetVersion
+  version: 10

@@ -17,9 +17,10 @@ public class WorldInteraction : MonoBehaviour
     [Header("Deadly")]
     public LayerMask deadlyLayer;
 
-    //Spawnpoint
+    //Checkpoint
     [Header("Checkpoint")]
     public LayerMask checkPointLayer;
+    public Transform spawnPoint;
 
     //NextLevel
     [Header("Destiny")]
@@ -44,11 +45,15 @@ public class WorldInteraction : MonoBehaviour
         }
         else if(colliderMask == deadlyLayer)
         {
-            LevelManager.Instance.RestartLevel();
+            if(DifficultManager.Instance.canResetLevels)
+                RestartLevel();
+            else
+                LevelManager.Instance.ResetLevels();
         }
         else if(colliderMask == checkPointLayer)
         {
-            LevelManager.Instance.spawnPoint = collision.gameObject.transform;
+            if(DifficultManager.Instance.canUseCheckpoints)
+                spawnPoint = collision.gameObject.transform;
         }
 
     }
@@ -85,5 +90,11 @@ public class WorldInteraction : MonoBehaviour
             playerMov.isBeingPushed = false;
             playerMov.maxSpeed -= airForce;
         }
+    }
+
+    public void RestartLevel()
+    {
+        rb.linearVelocity = Vector3.zero;
+        transform.position = spawnPoint.position;
     }
 }
