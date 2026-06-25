@@ -1,21 +1,20 @@
 using UnityEngine;
 
-public enum CanonFacing
-{
-    right,
-    left,
-    up,
-    down
-}
-
 public class Canon : MonoBehaviour
 {
-    public CanonFacing facing;
+    Animator anim;
 
     public GameObject canonBall;
+    public Transform spawnPoint;
+
     public float canonBallSpeed;
     public float timeBtwShoot;
     float currentTime;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     private void Update()
     {
@@ -25,23 +24,10 @@ public class Canon : MonoBehaviour
         }
         else
         {
-            Rigidbody2D ballRb = Instantiate(canonBall, transform.position, Quaternion.identity).GetComponent<Rigidbody2D>();
+            anim.SetTrigger("Launch");
 
-            switch (facing)
-            {
-                case(CanonFacing.left):
-                    ballRb.AddForce(-transform.right * canonBallSpeed);
-                    break;
-                case(CanonFacing.right):
-                    ballRb.AddForce(transform.right * canonBallSpeed);
-                    break;
-                case(CanonFacing.up):
-                    ballRb.AddForce(transform.up * canonBallSpeed);
-                    break;
-                case (CanonFacing.down):
-                    ballRb.AddForce(-transform.up * canonBallSpeed);
-                    break;
-            }
+            Rigidbody2D ballRb = Instantiate(canonBall, spawnPoint.position, Quaternion.identity).GetComponent<Rigidbody2D>();
+            ballRb.AddForce(transform.right * canonBallSpeed);
 
             currentTime = 0;
         }

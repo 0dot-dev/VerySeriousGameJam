@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 56421587100ff014ca60253d4dfffa1e
+guid: 9c2e1bfb3b40164488c5896d294bfe2b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8588076794758218427
-    second: CanonBall_0
+      213: -7476769313899797352
+    second: CanonBall 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CanonBall_0
+      name: CanonBall 1_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 23
-        width: 82
-        height: 82
+        x: 32
+        y: 30
+        width: 64
+        height: 68
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bb2c65fd75afe2770800000000000000
-      internalID: 8588076794758218427
+      spriteID: 89426713ced2d3890800000000000000
+      internalID: -7476769313899797352
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CanonBall_0: 8588076794758218427
+      CanonBall 1_0: -7476769313899797352
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
